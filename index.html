@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Create a Happy and Healthy Life as a Teen</title>
+  <!-- Google Fonts import -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #252525;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    
+    header {
+      background-color: #4caf50; /* WikiHow-like green */
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    
+    .container {
+      max-width: 768px; /* WikiHow has a narrower content area */
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px; /* More modern rounded corners */
+    }
+    
+    .numbered-heading {
+      display: flex;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+    
+    .step-number {
+      background-color: #4caf50;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    h2.with-number {
+      margin: 0;
+      border: none;
+      color: #4caf50;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    h2 {
+      color: #4caf50; /* WikiHow-like green */
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 12px;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      scroll-margin-top: 30px; /* Adds margin when scrolling to this element */
+    }
+    
+    .img-container {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px; /* More modern rounded corners */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .caption {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 8px;
+      font-style: italic;
+      text-align: center;
+    }
+    
+    .highlight {
+      font-weight: 600;
+      color: #4caf50; /* WikiHow-like green */
+    }
+    
+    .quote {
+      background-color: #f5f5f5;
+      border-left: 4px solid #4caf50;
+      padding: 1rem;
+      margin: 20px 0;
+      font-style: italic;
+      border-radius: 4px; /* Slight rounding */
+    }
+    
+    /* Method-style navigation similar to WikiHow but more modern */
+    .method-nav {
+      display: flex;
+      background-color: #f5f5f5;
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .method-nav-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px 5px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      border-right: 1px solid #e0e0e0;
+      transition: background-color 0.2s ease;
+    }
+    
+    .method-nav-item:last-child {
+      border-right: none;
+    }
+    
+    .method-nav-item.active {
+      background-color: #4caf50;
+      color: white;
+    }
+    
+    /* Add tip boxes like WikiHow but with modern styling */
+    .tip-box {
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .tip-title {
+      color: #4caf50;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .tip-title:before {
+      content: "💡";
+      margin-right: 8px;
+    }
+    
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+      padding: 1rem 1.5rem;
+    }
+  </style>
+  <script>
+    // Function to handle smooth scrolling when navigation items are clicked
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all navigation items
+      const navItems = document.querySelectorAll('.method-nav-item');
+      
+      // Add click event listener to each navigation item
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          navItems.forEach(navItem => {
+            navItem.classList.remove('active');
+          });
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+          
+          // Get the target section ID
+          const targetId = this.getAttribute('data-target');
+          
+          // Scroll to the target section
+          if (targetId) {
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>How to Create a Happy and Healthy Life as a Teen</h1>
+  </header>
+  
+  <div class="container">
+    <div class="section">
+      <p>Happiness and good health are two of the most important things in life. But what do they really mean? Happiness is about feeling good, having positive relationships, and doing things that bring joy. Good health is not just about avoiding sickness—it's about taking care of your body and mind so you can feel your best every day.</p>
+      
+      <!-- WikiHow-style method navigation -->
+      <div class="method-nav">
+        <div class="method-nav-item active" data-target="physical-health">Physical Health</div>
+        <div class="method-nav-item" data-target="mental-health">Mental Health</div>
+        <div class="method-nav-item" data-target="relationships">Relationships</div>
+        <div class="method-nav-item" data-target="purpose">Finding Purpose</div>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://thimbleandtwig.com/wp-content/uploads/2023/03/teen-outdoor-games-2.jpg" alt="Happy teenagers enjoying outdoor activities">
+        <p class="caption">Engaging in outdoor activities with friends promotes both physical health and happiness.</p>
+      </div>
+    </div>
+    
+    <div id="physical-health" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">1</div>
+        <h2 class="with-number">Take Care of Your Body</h2>
+      </div>
+      <p>Your physical health has a big impact on your happiness. Here are some simple ways to stay healthy:</p>
+      <ul>
+        <li><span class="highlight">Eat nutritious food</span> – A balanced diet with fruits, vegetables, protein, and whole grains gives your body energy. Teens should aim for 5 servings of fruits and vegetables daily.</li>
+        <li><span class="highlight">Get enough sleep</span> – Teenagers need around 8-10 hours of sleep each night to stay focused and energized. Adequate sleep improves academic performance and mood regulation.</li>
+        <li><span class="highlight">Exercise regularly</span> – Whether it's sports, dancing, or just walking, movement helps you feel good and stay strong. Aim for at least 60 minutes of physical activity each day.</li>
+        <li><span class="highlight">Stay hydrated</span> – Drinking enough water helps your body function properly and keeps your mind sharp. Even mild dehydration can affect concentration and energy levels.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tip</div>
+        <p>Keep a water bottle with you throughout the day to stay hydrated. Adding fresh fruit slices like lemon or strawberry can make drinking water more enjoyable!</p>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://www.felixhospital.com/sites/default/files/2022-06/buddha-bowl-dish-with-vegetables-legumes-top-view.jpg" alt="Healthy food options for teens">
+        <p class="caption">A balanced diet is essential for teen development and energy levels.</p>
+      </div>
+    </div>
+    
+    <div id="mental-health" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">2</div>
+        <h2 class="with-number">Take Care of Your Mind</h2>
+      </div>
+      <p>Mental health is just as important as physical health. Here's how you can support your emotional well-being:</p>
+      <ul>
+        <li><span class="highlight">Manage stress</span> – Find ways to relax, like listening to music, drawing, or deep breathing. Teens who practice stress management techniques report higher levels of well-being.</li>
+        <li><span class="highlight">Talk about your feelings</span> – Sharing your thoughts with a friend, family member, or counselor can help you feel supported. Open communication is important for teen mental health.</li>
+        <li><span class="highlight">Limit screen time</span> – Too much time on social media can make you feel anxious. Take breaks and enjoy real-life activities. Teens who take regular breaks from social media report less anxiety and better sleep.</li>
+        <li><span class="highlight">Practice gratitude</span> – Focusing on the good things in your life can help you feel happier. Gratitude practices can significantly improve mental health outcomes in adolescents.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tip</div>
+        <p>Try the "3 Good Things" exercise: Each night before bed, write down three positive things that happened during your day, no matter how small.</p>
+      </div>
+      
+      <div class="quote">
+        "Mental health is not just the absence of mental illness. It's having the resources to cope with challenges and the foundation to thrive in school, work and life."
+      </div>
+    </div>
+    
+    <div id="relationships" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">3</div>
+        <h2 class="with-number">Build Positive Relationships</h2>
+      </div>
+      <p>Surrounding yourself with good people makes a huge difference in your happiness. Here's how:</p>
+      <ul>
+        <li><span class="highlight">Choose friends who support you</span> – Good friends bring positivity and encouragement. Positive friendships are linked to better mental health outcomes in teens.</li>
+        <li><span class="highlight">Be kind to others</span> – Helping someone or showing kindness can make both you and them feel good. Acts of kindness trigger the release of endorphins, creating what's known as a "helper's high".</li>
+        <li><span class="highlight">Set boundaries</span> – Protect your mental health by avoiding toxic relationships and saying no when needed. Learning to set healthy boundaries is a key life skill for emotional well-being.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tip</div>
+        <p>When making new friends, look for people who make you feel good about yourself and share some of your interests or values.</p>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://img.freepik.com/free-photo/medium-shot-women-coffee-shop_23-2150378274.jpg" alt="Teenagers supporting each other">
+        <p class="caption">Supportive friendships are crucial for teen emotional development.</p>
+      </div>
+    </div>
+    
+    <div id="purpose" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">4</div>
+        <h2 class="with-number">Find Purpose and Enjoyment</h2>
+      </div>
+      <p>Doing things you love and setting goals can bring meaning to your life:</p>
+      <ul>
+        <li><span class="highlight">Explore hobbies</span> – Whether it's sports, music, art, or gaming, hobbies help you relax and express yourself. Teens who engage in regular hobbies report higher levels of life satisfaction.</li>
+        <li><span class="highlight">Set small goals</span> – Achieving even little things can give you a sense of accomplishment. Goal-setting helps build resilience and self-efficacy in teens.</li>
+        <li><span class="highlight">Give back</span> – Volunteering or helping your community can make you feel fulfilled and connected. Teens who volunteer regularly show improved self-esteem and reduced risk of depression.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tip</div>
+        <p>Start with just 30 minutes a week dedicated to a hobby or activity you enjoy. Gradually increase the time as you discover what truly makes you happy.</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Final Thoughts</h2>
+      <p>Creating a happy and healthy life isn't about being perfect—it's about making small, positive choices every day. Take care of your body, support your mental health, build strong relationships, and find joy in what you do. Your well-being is in your hands, and every step you take matters!</p>
+    </div>
+  </div>
+</body>
+</html>
