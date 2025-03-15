@@ -17,7 +17,7 @@
     }
     
     header {
-      background-color: #4caf50;
+      background-color: #4caf50; /* WikiHow-like green */
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -32,12 +32,12 @@
     }
     
     .container {
-      max-width: 768px;
+      max-width: 768px; /* WikiHow has a narrower content area */
       margin: 0 auto;
       padding: 1.5rem;
       background: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      border-radius: 8px; /* More modern rounded corners */
     }
     
     .numbered-heading {
@@ -69,7 +69,7 @@
     }
     
     h2 {
-      color: #4caf50;
+      color: #4caf50; /* WikiHow-like green */
       margin-top: 2rem;
       font-size: 1.6rem;
       padding-bottom: 0.5rem;
@@ -88,7 +88,7 @@
     
     .section {
       margin-bottom: 30px;
-      scroll-margin-top: 30px;
+      scroll-margin-top: 30px; /* Adds margin when scrolling to this element */
     }
     
     .img-container {
@@ -100,7 +100,7 @@
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 8px; /* More modern rounded corners */
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
@@ -114,7 +114,7 @@
     
     .highlight {
       font-weight: 600;
-      color: #4caf50;
+      color: #4caf50; /* WikiHow-like green */
     }
     
     .quote {
@@ -123,9 +123,105 @@
       padding: 1rem;
       margin: 20px 0;
       font-style: italic;
-      border-radius: 4px;
+      border-radius: 4px; /* Slight rounding */
+    }
+    
+    /* Method-style navigation similar to WikiHow but more modern */
+    .method-nav {
+      display: flex;
+      background-color: #f5f5f5;
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .method-nav-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px 5px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      border-right: 1px solid #e0e0e0;
+      transition: background-color 0.2s ease;
+    }
+    
+    .method-nav-item:last-child {
+      border-right: none;
+    }
+    
+    .method-nav-item.active {
+      background-color: #4caf50;
+      color: white;
+    }
+    
+    /* Add tip boxes like WikiHow but with modern styling */
+    .tip-box {
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .tip-title {
+      color: #4caf50;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .tip-title:before {
+      content: "💡";
+      margin-right: 8px;
+    }
+    
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+      padding: 1rem 1.5rem;
     }
   </style>
+  <script>
+    // Function to handle smooth scrolling when navigation items are clicked
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all navigation items
+      const navItems = document.querySelectorAll('.method-nav-item');
+      
+      // Add click event listener to each navigation item
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          navItems.forEach(navItem => {
+            navItem.classList.remove('active');
+          });
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+          
+          // Get the target section ID
+          const targetId = this.getAttribute('data-target');
+          
+          // Scroll to the target section
+          if (targetId) {
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -134,7 +230,20 @@
   
   <div class="container">
     <div class="section">
-      <p>Lykke og god helse er to av de viktigste tingene i livet. Men hva betyr det egentlig? Lykke handler om å ha det bra, ha positive relasjoner og gjøre ting som gir glede. God helse handler ikke bare om å unngå sykdom—det handler om å ta vare på kroppen og sinnet ditt, slik at du kan føle deg best mulig hver dag.</p>
+      <p>Lykke og god helse er to av de viktigste tingene i livet. Men hva betyr de egentlig? Lykke handler om å føle seg bra, ha positive relasjoner og gjøre ting som gir glede. God helse handler ikke bare om å unngå sykdom—det handler om å ta vare på kroppen og sinnet ditt slik at du kan føle deg best mulig hver dag.</p>
+      
+      <!-- WikiHow-style method navigation -->
+      <div class="method-nav">
+        <div class="method-nav-item active" data-target="physical-health">Fysisk helse</div>
+        <div class="method-nav-item" data-target="mental-health">Mental helse</div>
+        <div class="method-nav-item" data-target="relationships">Relasjoner</div>
+        <div class="method-nav-item" data-target="purpose">Finne mening</div>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://thimbleandtwig.com/wp-content/uploads/2023/03/teen-outdoor-games-2.jpg" alt="Glade tenåringer som nyter utendørsaktiviteter">
+        <p class="caption">Å delta i utendørsaktiviteter med venner fremmer både fysisk helse og lykke.</p>
+      </div>
     </div>
     
     <div id="physical-health" class="section">
@@ -142,13 +251,23 @@
         <div class="step-number">1</div>
         <h2 class="with-number">Ta vare på kroppen din</h2>
       </div>
-      <p>Fysisk helse har stor innvirkning på lykken din. Her er noen enkle måter å holde seg sunn på:</p>
+      <p>Din fysiske helse har stor innvirkning på lykken din. Her er noen enkle måter å holde seg frisk på:</p>
       <ul>
-        <li><span class="highlight">Spis næringsrik mat</span> – En balansert diett med frukt, grønnsaker, proteiner og fullkorn gir deg energi.</li>
-        <li><span class="highlight">Få nok søvn</span> – Tenåringer trenger rundt 8-10 timer søvn hver natt for å være fokuserte og energiske.</li>
-        <li><span class="highlight">Vær fysisk aktiv</span> – Sport, dans eller turgåing hjelper deg å føle deg bra og holde deg sterk.</li>
-        <li><span class="highlight">Drikk nok vann</span> – God hydrering holder kroppen din i balanse og hjelper deg å tenke klart.</li>
+        <li><span class="highlight">Spis næringsrik mat</span> – Et balansert kosthold med frukt, grønnsaker, protein og fullkorn gir kroppen din energi. Tenåringer bør sikte mot 5 porsjoner frukt og grønnsaker daglig.</li>
+        <li><span class="highlight">Få nok søvn</span> – Tenåringer trenger rundt 8-10 timer søvn hver natt for å holde seg fokusert og energisk. Tilstrekkelig søvn forbedrer akademiske prestasjoner og humørregulering.</li>
+        <li><span class="highlight">Tren regelmessig</span> – Enten det er sport, dans eller bare gåing, bevegelse hjelper deg med å føle deg bra og holde deg sterk. Prøv å få minst 60 minutter fysisk aktivitet hver dag.</li>
+        <li><span class="highlight">Hold deg hydrert</span> – Å drikke nok vann hjelper kroppen din å fungere riktig og holder sinnet skarpt. Selv mild dehydrering kan påvirke konsentrasjon og energinivåer.</li>
       </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tips</div>
+        <p>Ha med deg en vannflaske gjennom dagen for å holde deg hydrert. Å tilsette friske fruktbiter som sitron eller jordbær kan gjøre det mer hyggelig å drikke vann!</p>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://www.felixhospital.com/sites/default/files/2022-06/buddha-bowl-dish-with-vegetables-legumes-top-view.jpg" alt="Sunne matvalg for tenåringer">
+        <p class="caption">Et balansert kosthold er essensielt for tenåringers utvikling og energinivåer.</p>
+      </div>
     </div>
     
     <div id="mental-health" class="section">
@@ -156,18 +275,68 @@
         <div class="step-number">2</div>
         <h2 class="with-number">Ta vare på sinnet ditt</h2>
       </div>
-      <p>Din mentale helse er like viktig som din fysiske helse. Her er noen måter å støtte din mentale velvære på:</p>
+      <p>Mental helse er like viktig som fysisk helse. Her er hvordan du kan støtte din emosjonelle velvære:</p>
       <ul>
-        <li><span class="highlight">Håndter stress</span> – Finn måter å slappe av på, som musikk, tegning eller dyp pusting.</li>
-        <li><span class="highlight">Snakk om følelsene dine</span> – Å dele tanker med en venn eller familie kan gi støtte.</li>
-        <li><span class="highlight">Begrens skjermtid</span> – For mye tid på sosiale medier kan føre til angst.</li>
-        <li><span class="highlight">Praktiser takknemlighet</span> – Å fokusere på det gode i livet kan gjøre deg lykkeligere.</li>
+        <li><span class="highlight">Håndter stress</span> – Finn måter å slappe av på, som å lytte til musikk, tegne eller gjøre dype pusteøvelser. Tenåringer som praktiserer stresshåndteringsteknikker rapporterer høyere nivåer av velvære.</li>
+        <li><span class="highlight">Snakk om følelsene dine</span> – Å dele tankene dine med en venn, et familiemedlem eller en rådgiver kan hjelpe deg å føle deg støttet. Åpen kommunikasjon er viktig for tenåringers mentale helse.</li>
+        <li><span class="highlight">Begrens skjermtid</span> – For mye tid på sosiale medier kan gjøre deg engstelig. Ta pauser og nyt aktiviteter i det virkelige liv. Tenåringer som tar regelmessige pauser fra sosiale medier rapporterer mindre angst og bedre søvn.</li>
+        <li><span class="highlight">Praktiser takknemlighet</span> – Å fokusere på de gode tingene i livet ditt kan hjelpe deg å føle deg lykkeligere. Takknemlighetspraksis kan betydelig forbedre mentale helseresultater hos ungdom.</li>
       </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tips</div>
+        <p>Prøv "3 Gode Ting"-øvelsen: Hver kveld før du legger deg, skriv ned tre positive ting som skjedde i løpet av dagen din, uansett hvor små de er.</p>
+      </div>
+      
+      <div class="quote">
+        "Mental helse er ikke bare fravær av psykisk sykdom. Det handler om å ha ressursene til å takle utfordringer og grunnlaget for å trives på skolen, i arbeidet og i livet."
+      </div>
+    </div>
+    
+    <div id="relationships" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">3</div>
+        <h2 class="with-number">Bygg positive relasjoner</h2>
+      </div>
+      <p>Å omgi deg med gode mennesker gjør en stor forskjell for lykken din. Her er hvordan:</p>
+      <ul>
+        <li><span class="highlight">Velg venner som støtter deg</span> – Gode venner bringer positivitet og oppmuntring. Positive vennskap er knyttet til bedre mentale helseresultater hos tenåringer.</li>
+        <li><span class="highlight">Vær snill mot andre</span> – Å hjelpe noen eller vise vennlighet kan gjøre at både du og de føler seg bra. Vennlige handlinger utløser frigjøring av endorfiner, som skaper det som er kjent som en "hjelpers høyde".</li>
+        <li><span class="highlight">Sett grenser</span> – Beskytt din mentale helse ved å unngå giftige forhold og si nei når det trengs. Å lære å sette sunne grenser er en nøkkelferdighet i livet for emosjonell velvære.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tips</div>
+        <p>Når du får nye venner, se etter mennesker som får deg til å føle deg bra med deg selv og som deler noen av interessene eller verdiene dine.</p>
+      </div>
+      
+      <div class="img-container">
+        <img src="https://img.freepik.com/free-photo/medium-shot-women-coffee-shop_23-2150378274.jpg" alt="Tenåringer som støtter hverandre">
+        <p class="caption">Støttende vennskap er avgjørende for tenåringers emosjonelle utvikling.</p>
+      </div>
+    </div>
+    
+    <div id="purpose" class="section">
+      <div class="numbered-heading">
+        <div class="step-number">4</div>
+        <h2 class="with-number">Finn mening og glede</h2>
+      </div>
+      <p>Å gjøre ting du elsker og sette mål kan bringe mening til livet ditt:</p>
+      <ul>
+        <li><span class="highlight">Utforsk hobbyer</span> – Enten det er sport, musikk, kunst eller gaming, hobbyer hjelper deg med å slappe av og uttrykke deg selv. Tenåringer som engasjerer seg i regelmessige hobbyer rapporterer høyere nivåer av livstilfredshet.</li>
+        <li><span class="highlight">Sett små mål</span> – Å oppnå selv små ting kan gi deg en følelse av prestasjon. Målsetting hjelper med å bygge motstandskraft og selveffektivitet hos tenåringer.</li>
+        <li><span class="highlight">Gi tilbake</span> – Frivillighetsarbeid eller å hjelpe lokalsamfunnet ditt kan få deg til å føle deg oppfylt og tilkoblet. Tenåringer som gjør frivillig arbeid regelmessig viser forbedret selvfølelse og redusert risiko for depresjon.</li>
+      </ul>
+      
+      <div class="tip-box">
+        <div class="tip-title">Tips</div>
+        <p>Start med bare 30 minutter i uken dedikert til en hobby eller aktivitet du liker. Øk gradvis tiden etterhvert som du oppdager hva som virkelig gjør deg lykkelig.</p>
+      </div>
     </div>
     
     <div class="section">
       <h2>Avsluttende tanker</h2>
-      <p>Å skape et lykkelig og sunt liv handler ikke om perfeksjon—det handler om å ta små, positive valg hver dag. Ta vare på kroppen din, støtt din mentale helse, bygg gode relasjoner og finn glede i det du gjør!</p>
+      <p>Å skape et lykkelig og sunt liv handler ikke om å være perfekt—det handler om å ta små, positive valg hver dag. Ta vare på kroppen din, støtt din mentale helse, bygg sterke relasjoner, og finn glede i det du gjør. Din velvære er i dine hender, og hvert skritt du tar betyr noe!</p>
     </div>
   </div>
 </body>
